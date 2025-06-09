@@ -1,0 +1,154 @@
+@font-face {
+  font-family: 'SpiderMan';
+  src: url('The\ Amazing\ Spider-Man.ttf') format('truetype');
+}
+
+h1 {
+  font-family: 'SpiderMan', 'Arial Black', sans-serif;
+  color: #D10000; 
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000; 
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-family: 'SpiderMan', 'Arial Black', sans-serif;
+  color: #D10000; 
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000; 
+  letter-spacing: 2px;
+}
+.hero-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('images/jijiji.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid #d10000;
+        }
+        
+        .hero-header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        .hero-header p.subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 20px auto;
+            color: #f5f5f5;
+        }
+        
+        .spider-logo {
+            width: 100px;
+            margin-bottom: 20px;
+            animation: swing 3s infinite alternate;
+        }
+        
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes swing {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+        
+        /* Navbar */
+        .spider-nav {
+            background-color: #000;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .spider-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        
+        .spider-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .spider-nav a:hover {
+            color: #d10000;
+        }
+        
+        .spider-nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #d10000;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .spider-nav a:hover::after {
+            width: 100%;
+        }
+        body {
+            background-image: url('fondo.jpg');
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .contenedor-imagen-texto {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .contenedor-imagen-texto .texto {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .contenedor-imagen-texto img {
+            width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2, h3 {
+            color: #d10000;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+        }
+        
