@@ -152,3 +152,82 @@ h2 {
             border-radius: 10px;
         }
         
+        /* Estilos adicionales para la sección de comentarios */
+        .seccion-comentarios {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .seccion-comentarios h2 {
+            color: #d62b1f;
+            border-bottom: 2px solid #d62b1f;
+            padding-bottom: 10px;
+        }
+        
+        .formulario-comentario {
+            margin-bottom: 30px;
+        }
+        
+        .formulario-comentario label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .formulario-comentario input, 
+        .formulario-comentario textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .formulario-comentario textarea {
+            height: 120px;
+        }
+        
+        .boton-enviar {
+            background-color: #d62b1f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .boton-enviar:hover {
+            background-color: #b8241a;
+        }
+        
+        .lista-comentarios {
+            margin-top: 30px;
+        }
+        
+        .comentario {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .comentario h4 {
+            margin-top: 0;
+            color: #d62b1f;
+        }
+        
+        .comentario p {
+            margin-bottom: 0;
+        }
+        
+        .fecha-comentario {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<section id="poderes">
+    <link rel="stylesheet" href="styles.css">
+    <title>Comentarios</title>
+</head>
+
+<header class="hero-header">
+        <img src="images/logo.png" alt="Logo Spider-Man" class="spider-logo">
+        <h1>Poderes</h1>
+        <p class="subtitle">"Un gran poder conlleva una gran responsabilidad"</p>
+    </header>
+    <nav class="spider-nav">
+        <ul>
+           <li><a href="peter.html">Sobre Peter</a></li>
+            <li><a href="poderes.html">Poderes</a></li>
+            <li><a href="villanos.html">Villanos</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="comentarios.html">Historia</a></li>
+        </ul>
+    </nav>
+    <div class="seccion-comentarios">
+        <h2>Comentarios</h2>
+        
+        <form class="formulario-comentario" action="guardar_comentario.php" method="POST">
+            <input type="hidden" name="pagina" value="villanos">
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Email (opcional):</label>
+            <input type="email" id="email" name="email">
+            
+            <label for="comentario">Comentario:</label>
+            <textarea id="comentario" name="comentario" required placeholder="Comparte tus pensamientos..."></textarea>
+            
+            <button type="submit" class="boton-enviar">Enviar Comentario</button>
+        </form>
+        <div class="lista-comentarios">
+            <h3>Comentarios Recientes</h3>
+
+            <?php
+
+            $servername = "localhost";
+            $username = "tu_usuario";
+            $password = "tu_contraseña";
+            $dbname = "nombre_base_datos";
+            
+            
+            
+           
