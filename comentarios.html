@@ -1,53 +1,421 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<section id="poderes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Comentarios</title>
+    <title>Comentarios Generales - Spider-Man</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        .hero-header {
+            background-color: #d62b1f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .spider-logo {
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .spider-nav {
+            background-color: #000;
+            padding: 15px 0;
+        }
+        
+        .spider-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .spider-nav li {
+            margin: 0 15px;
+        }
+        
+        .spider-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .spider-nav a:hover {
+            background-color: #d62b1f;
+        }
+        
+        .seccion-comentarios {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        
+        .seccion-comentarios h2 {
+            color: #d62b1f;
+            border-bottom: 2px solid #d62b1f;
+            padding-bottom: 10px;
+            text-align: center;
+            font-size: 28px;
+        }
+        
+        .formulario-comentario {
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .formulario-comentario label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .formulario-comentario input, 
+        .formulario-comentario textarea,
+        .formulario-comentario select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .formulario-comentario textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .boton-enviar {
+            background-color: #d62b1f;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            text-align: center;
+        }
+        
+        .boton-enviar:hover {
+            background-color: #b8241a;
+        }
+        
+        .lista-comentarios {
+            margin-top: 40px;
+        }
+        
+        .lista-comentarios h3 {
+            color: #d62b1f;
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .comentario {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #d62b1f;
+        }
+        
+        .comentario h4 {
+            margin-top: 0;
+            color: #d62b1f;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .comentario .seccion-comentada {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        .comentario p {
+            margin-bottom: 0;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .fecha-comentario {
+            font-size: 14px;
+            color: #777;
+            margin-top: 10px;
+            text-align: right;
+            font-style: italic;
+        }
+        
+        .mensaje {
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .exito {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .spider-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .spider-nav li {
+                margin: 5px 0;
+            }
+            
+            .seccion-comentarios {
+                margin: 20px 15px;
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
-
-<header class="hero-header">
+<body>
+    <header class="hero-header">
         <img src="images/logo.png" alt="Logo Spider-Man" class="spider-logo">
-        <h1>Poderes</h1>
-        <p class="subtitle">"Un gran poder conlleva una gran responsabilidad"</p>
+        <h1>Comentarios Generales</h1>
+        <p class="subtitle">"Déjanos saber tu opinión sobre el mundo de Spider-Man"</p>
     </header>
+    
     <nav class="spider-nav">
         <ul>
-           <li><a href="peter.html">Sobre Peter</a></li>
+            <li><a href="peter.html">Sobre Peter</a></li>
             <li><a href="poderes.html">Poderes</a></li>
             <li><a href="villanos.html">Villanos</a></li>
             <li><a href="historia.html">Historia</a></li>
-            <li><a href="comentarios.html">Historia</a></li>
+            <li><a href="comentarios.html">Comentarios</a></li>
         </ul>
     </nav>
+    
     <div class="seccion-comentarios">
-        <h2>Comentarios</h2>
+        <h2>¡Comparte tu Opinion!</h2>
         
-        <form class="formulario-comentario" action="guardar_comentario.php" method="POST">
-            <input type="hidden" name="pagina" value="villanos">
+        <?php
+        // Mostrar mensajes de éxito o error
+        if (isset($_GET['comentario'])) {
+            if ($_GET['comentario'] == 'exito') {
+                echo '<div class="mensaje exito">¡Gracias por tu comentario!</div>';
+            } elseif ($_GET['comentario'] == 'error') {
+                echo '<div class="mensaje error">Error al enviar el comentario. Inténtalo de nuevo.</div>';
+            } elseif ($_GET['comentario'] == 'vacio') {
+                echo '<div class="mensaje error">¡DEBE LLENAR LOS CAMPOS OBLIGATORIOS, NO SEA IMBECIL!</div>';
+            }
+        }
+        ?>
+        
+        <form class="formulario-comentario" action="guardar_comentario.php" method="POST" onsubmit="return validarFormulario()">
+            <input type="hidden" name="pagina" value="general">
+            
+            <label for="seccion">Sección sobre la que comentas:</label>
+            <select id="seccion" name="seccion" required>
+                <option value="">-- Selecciona una opción --</option>
+                <option value="peter">Sobre Peter Parker</option>
+                <option value="poderes">Poderes de Spider-Man</option>
+                <option value="villanos">Villanos</option>
+                <option value="historia">Historia</option>
+                <option value="general">General</option>
+                <option value="otros">Otros</option>
+            </select>
             
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" required maxlength="100">
             
             <label for="email">Email (opcional):</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" maxlength="100">
+            
+            <label for="tema">Tema específico (opcional):</label>
+            <input type="text" id="tema" name="tema" placeholder="Ej: El traje negro, La muerte de Gwen Stacy...">
             
             <label for="comentario">Comentario:</label>
-            <textarea id="comentario" name="comentario" required placeholder="Comparte tus pensamientos..."></textarea>
+            <textarea id="comentario" name="comentario" required placeholder="Comparte tus pensamientos sobre Spider-Man..." maxlength="1000"></textarea>
             
             <button type="submit" class="boton-enviar">Enviar Comentario</button>
         </form>
+        
         <div class="lista-comentarios">
-            <h3>Comentarios Recientes</h3>
-
+            <h3>Últimos Comentarios</h3>
+            
             <?php
-
+            // Conexión a la base de datos y recuperación de comentarios
             $servername = "localhost";
             $username = "tu_usuario";
             $password = "tu_contraseña";
             $dbname = "nombre_base_datos";
             
+            try {
+                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $conn->exec("SET NAMES 'utf8'");
+                
+                // Consulta para obtener los últimos comentarios
+                $stmt = $conn->prepare("SELECT seccion, nombre, tema, comentario, fecha FROM comentarios ORDER BY fecha DESC LIMIT 15");
+                $stmt->execute();
+                
+                $comentarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                
+                if (count($comentarios) > 0) {
+                    foreach($comentarios as $row) {
+                        echo '<div class="comentario">';
+                        echo '<h4>' . htmlspecialchars($row['nombre'], ENT_QUOTES, 'UTF-8') . '</h4>';
+                        
+                        // Mostrar la sección comentada
+                        $seccionTexto = [
+                            'peter' => 'Sobre Peter Parker',
+                            'poderes' => 'Poderes de Spider-Man',
+                            'villanos' => 'Villanos',
+                            'historia' => 'Historia',
+                            'general' => 'General',
+                            'otros' => 'Otros temas'
+                        ];
+                        $seccionMostrar = $seccionTexto[$row['seccion']] ?? $row['seccion'];
+                        
+                        echo '<div class="seccion-comentada">Sección: ' . htmlspecialchars($seccionMostrar, ENT_QUOTES, 'UTF-8') . '</div>';
+                        
+                        if (!empty($row['tema'])) {
+                            echo '<div class="tema-comentario"><strong>Tema:</strong> ' . htmlspecialchars($row['tema'], ENT_QUOTES, 'UTF-8') . '</div>';
+                        }
+                        
+                        echo '<p>' . nl2br(htmlspecialchars($row['comentario'], ENT_QUOTES, 'UTF-8')) . '</p>';
+                        echo '<p class="fecha-comentario">' . htmlspecialchars($row['fecha']) . '</p>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo '<p style="text-align: center; font-style: italic;">No hay comentarios aún. ¡Sé el primero en comentar!</p>';
+                }
+            } catch(PDOException $e) {
+                echo '<div class="mensaje error">Error al cargar los comentarios. Por favor intenta más tarde.</div>';
+                // Para depuración:
+                // echo '<p>Error: ' . htmlspecialchars($e->getMessage()) . '</p>';
+            }
             
+            // Cerrar conexión
+            $conn = null;
+            ?>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Spider-Man Portafolio | Todos los derechos reservados a Marvel Comics</p>
+    </footer>
+    
+    <script>
+        function validarFormulario() {
+            const seccion = document.getElementById('seccion').value;
+            const nombre = document.getElementById('nombre').value.trim();
+            const comentario = document.getElementById('comentario').value.trim();
+            let camposVacios = [];
             
-           
+            if (seccion === '') camposVacios.push('sección');
+            if (nombre === '') camposVacios.push('nombre');
+            if (comentario === '') camposVacios.push('comentario');
+            
+            if (camposVacios.length > 0) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'mensaje error';
+                errorDiv.textContent = `¡DEBE LLENAR LOS CAMPOS OBLIGATORIOS (${camposVacios.join(', ')}), NO SEA IMBECIL!`;
+                errorDiv.style.animation = 'shake 0.5s';
+                
+                const h2 = document.querySelector('.seccion-comentarios h2');
+                const existingError = document.querySelector('.mensaje.error:not(.mensaje-error)');
+                
+                if (existingError) {
+                    existingError.remove();
+                }
+                
+                h2.insertAdjacentElement('afterend', errorDiv);
+                
+                if (seccion === '') {
+                    document.getElementById('seccion').style.borderColor = '#d62b1f';
+                }
+                if (nombre === '') {
+                    document.getElementById('nombre').style.borderColor = '#d62b1f';
+                }
+                if (comentario === '') {
+                    document.getElementById('comentario').style.borderColor = '#d62b1f';
+                }
+                
+                errorDiv.scrollIntoView({ behavior: 'smooth' });
+                
+                return false;
+            }
+            return true;
+        }
+        
+        document.getElementById('seccion').addEventListener('change', function() {
+            this.style.borderColor = '#ddd';
+        });
+        
+        document.getElementById('nombre').addEventListener('input', function() {
+            this.style.borderColor = '#ddd';
+        });
+        
+        document.getElementById('comentario').addEventListener('input', function() {
+            this.style.borderColor = '#ddd';
+        });
+    </script>
+</body>
+</html>
